@@ -1,0 +1,14 @@
+apiVersion: gateway.mulesoft.com/v1alpha1
+kind: PolicyBinding
+metadata:
+  name: inventory-binding
+spec:
+  targetRef:
+    name: inventory-api
+  policyRef:
+    name: route
+  config:
+    destinationRef:
+      name: inventory-service
+  rules:
+  - path: /api/inventory.*

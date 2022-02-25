@@ -1,0 +1,14 @@
+apiVersion: gateway.mulesoft.com/v1alpha1
+kind: PolicyBinding
+metadata:
+  name: userAuthTest
+spec:
+  targetRef:
+    name: inventory-api
+  policyRef:
+    name: basic-authentication
+  config:
+    username: max
+    password: mule
+  rules:
+    - path: /api/inventory.*

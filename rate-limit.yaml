@@ -1,0 +1,17 @@
+apiVersion: gateway.mulesoft.com/v1alpha1
+kind: PolicyBinding
+metadata:
+  name: ratelimitTest
+spec:
+  targetRef:
+    name: inventory-api
+  policyRef:
+    name: rate-limit-local
+  config:
+    headers: true
+    tiers:
+    - timePeriod: 1
+      timeUnit: MINUTES
+      maximumRequests: 2
+  rules:
+  - path: /api/inventory.*

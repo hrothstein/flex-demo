@@ -1,0 +1,6 @@
+apiVersion: gateway.mulesoft.com/v1alpha1
+kind: Service
+metadata:
+  name: inventory-service
+spec:
+  address: https://hbr-inventorymanagementservice.us-e2.cloudhub.io:443
